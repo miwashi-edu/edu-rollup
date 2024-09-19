@@ -19,6 +19,7 @@ npm install --save-dev @rollup/plugin-node-resolve @rollup/plugin-commonjs @roll
 ## Modify package.json
 
 ```bash
+npm pkg set build="rollup -c" #Change from vite build to rollup build
 ```
 
 
@@ -58,6 +59,7 @@ export default {
       exclude: 'node_modules/**', // Only transpile your source code
     }),
   ],
+  external: Object.keys(pkg.peerDependencies || {})
 };
 EOF
 ```
