@@ -26,7 +26,7 @@ npm install --save-dev @rollup/plugin-node-resolve @rollup/plugin-commonjs @roll
 
 ### Example
 
-```json
+```js
 export default {
     input: 'src/index.js',
     output: [],
