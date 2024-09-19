@@ -29,9 +29,10 @@ npm install --save-dev rollup-plugin-postcss
 
 ```bash
 npm pkg set build="rollup -c" #Change from vite build to rollup build
-npm pkg set main="dist/index.cjs.js",
-npm pkg set module="dist/index.es.js",
-npm pkg set unpkg="dist/index.umd.js",
+npm pkg set main="dist/index.cjs.js" # CommonJS Module
+npm pkg set module="dist/index.es.js" # ES6 Module
+npm pkg set unpkg="dist/index.umd.js" # Universal Module Defintiion Module
+npm pkg set files='["dist", "assets/fonts", "README.md"]' --json
 ```
 
 
