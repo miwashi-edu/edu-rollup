@@ -1,11 +1,17 @@
 # edu-rollup
 
-## Install rollup
+## Prepare
 
 ```bash
 cd ~
 cd ws
 cd fwk-components
+```
+
+
+## Install rollup
+
+```bash
 npm install --save-dev rollup
 ```
 
