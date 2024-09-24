@@ -19,7 +19,10 @@ npm install --save-dev rollup
 ## Install Transpiler
 
 ```bash
-npm install --save-dev @rollup/plugin-node-resolve @rollup/plugin-commonjs @rollup/plugin-babel
+npm install --save-dev @rollup/plugin-node-resolve
+npm install --save-dev @rollup/plugin-commonjs
+npm install --save-dev @rollup/plugin-babel
+npm install --save-dev @babel/preset-react
 ```
 
 ## Install plugins
