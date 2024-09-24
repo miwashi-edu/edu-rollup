@@ -7,6 +7,35 @@
 
 [Terser](https://terser.org)
 
+### Example
+
+```bash
+npm install terser --save-dev
+npx terser your-file.js --compress --mangle --output your-file.min.js
+```
+
+
+## Babel
+
+> Babel is a JavaScript compiler and toolchain primarily used to convert modern JavaScript (ES6+ and beyond) into backward-compatible versions that can run in older browsers or environments that do not support the latest language features. It allows developers to use cutting-edge JavaScript syntax and features without worrying about browser compatibility.
+> Key Features: Transpiles ES6 to ES5, Polyfills, Custom Plugins, Preset-based Configuration, React JSX Trannspilation, TypeScript Support
+
+[Babel](https://babeljs.io)
+
+## Resolver
+
+> @rollup/plugin-node-resolve is a plugin for Rollup, a popular JavaScript module bundler. The plugin allows Rollup to resolve third-party packages from node_modules, making it easier to bundle dependencies in your project. By default, Rollup only understands ES modules (files with .js extensions that use import/export syntax), but most libraries in node_modules are published as CommonJS or other formats.
+> Key Features: Resolves third-party modules, Supports different module formats, Browser field support, Custom extensions
+
+[Resolver](https://www.npmjs.com/package/@rollup/plugin-node-resolve)
+
+## postcss plugin
+
+> The PostCSS plugin for Rollup is used to process CSS files with PostCSS during the Rollup bundling process. PostCSS is a tool for transforming CSS with JavaScript plugins, which can modify your CSS files in various ways, such as adding vendor prefixes, optimizing the code, or allowing the use of future CSS syntax.
+> Key Features: Importing CSS, PostCSS Plugins, CSS Modules, Extract CSS, Sass/LESS Support
+
+[rollup-plugin-postcss](https://www.npmjs.com/package/rollup-plugin-postcss)
+
 ## Prepare
 
 ```bash
