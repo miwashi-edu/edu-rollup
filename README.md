@@ -156,3 +156,23 @@ export default {
 };
 EOF
 ```
+
+## Flytta peerDependencies
+
+> As dependencies are installed with our component when running **npm install**, we want to prevent to force a version of react on our consumer.
+> So we move the dependencies to dev dependencies, and add the to peerDependencies. Now the consumer is free to choose his own version of react, but we communicate
+> trough peerDependencies that react is needed to use our component. Use version range in peerDependences to communicate what versions your components supports.
+
+```json
+"dependencies": {
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0 <19.0.0",       // Supports both React 17 and React 18
+    "react-dom": ">=17.0.0 <19.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+}
+```
+
