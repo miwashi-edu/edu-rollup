@@ -106,7 +106,7 @@ export default {
         }),
     commonjs(),
     image(),
-    terser()
+    terser(),
     babel({
       babelHelpers: 'bundled', // Bundles the helpers in the same file
       exclude: 'node_modules/**', // Only transpile your source code
