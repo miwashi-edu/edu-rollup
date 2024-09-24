@@ -1,5 +1,12 @@
 # edu-rollup
 
+## Terser
+
+> Terser is a JavaScript minifier, often used to reduce the size of JavaScript files by removing unnecessary characters like whitespace, comments, and shortening variable names. It’s primarily employed in the build process of web applications to optimize performance by delivering smaller, faster-loading scripts.
+> Key features, minification, compression ES6 support, Source Maps, Tree-Shaking.
+
+[Terser](https://terser.org)
+
 ## Prepare
 
 ```bash
