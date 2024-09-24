@@ -83,7 +83,7 @@ npm pkg set files='["dist", "assets/fonts", "README.md"]' --json
 
 ## Create Rollup Config
 
-### Example
+### Example (a simplifyed version for viewing only)
 
 ```js
 export default {
