@@ -59,6 +59,7 @@ npm install --save-dev @rollup/plugin-node-resolve
 npm install --save-dev @rollup/plugin-commonjs
 npm install --save-dev @rollup/plugin-babel
 npm install --save-dev @babel/preset-react
+npm install --save-dev @babel/preset-env
 ```
 
 ## Install plugins
