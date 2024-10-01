@@ -78,6 +78,7 @@ npm pkg set main="dist/index.cjs.js" # CommonJS Module
 npm pkg set module="dist/index.es.js" # ES6 Module
 npm pkg set unpkg="dist/index.umd.js" # Universal Module Defintiion Module
 npm pkg set files='["dist", "assets/fonts", "README.md"]' --json
+npm pkg set private=false --json
 ```
 
 
