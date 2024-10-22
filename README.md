@@ -68,6 +68,7 @@ npm install --save-dev @babel/preset-env
 npm install --save-dev @rollup/plugin-terser
 npm install --save-dev @rollup/plugin-image
 npm install --save-dev rollup-plugin-postcss
+npm install --save-dev @rollup/plugin-json
 ```
 
 
