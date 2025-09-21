@@ -1,0 +1,61 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Components/BundleCss/BundleCSS Guide" />
+
+# BundleCSS
+
+## BEM naming (Block–Element–Modifier)
+- `.box-demo__padding` = block `"box-demo"` + element `"padding"` (double underscore).
+- Modifiers use `--`, e.g. `.box-demo--compact`.
+
+## CSS Modules filename (Vite)
+The filename **must** include `.module` immediately before the extension.
+
+- ✅ `BundleCss.module.css`, `BundleCss.bem.module.css`
+- ❌ `BundleCss.module.bem.css`
+
+## Using BEM with CSS Modules
+### A) Use exported keys as-is (kebab-case via brackets)
+```jsx
+import styles from './BundleCss.bem.module.css';
+
+<div className={styles['box-demo']}>
+  <div className={styles['box-demo__padding']}>
+    <div className={styles['box-demo__content']}>CSS loaded ✓</div>
+  </div>
+</div>
+```
+
+### B) Export camelCase aliases (Vite config)
+```jsx
+import styles from './BundleCss.bem.module.css';
+
+<div className={styles.boxDemo}>
+  <div className={styles.boxDemo__padding}>
+    <div className={styles.boxDemo__content}>CSS loaded ✓</div>
+  </div>
+</div>
+```
+
+---
+
+## Config
+
+### Vite (`vite.config.js`)
+```js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  css: {
+    modules: {
+      // 'camelCase' exports BOTH original and camelCase keys.
+      // Use 'camelCaseOnly' to export ONLY camelCase keys.
+      localsConvention: 'camelCase',
+      // optional (handy in dev):
+      // generateScopedName: '[name]__[local]__[hash:base64:5]',
+    },
+  },
+});
+```

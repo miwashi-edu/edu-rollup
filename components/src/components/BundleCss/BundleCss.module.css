@@ -1,0 +1,31 @@
+.boxDemo {
+    /* margin shows outside spacing */
+    margin: 16px;
+    /* border clearly visible */
+    border: 4px solid #0f172a; /* slate-900 */
+    /* padding separates content from border */
+    padding: 12px;
+    /* background image via CSS url() to test asset copying */
+    /* background-image: url('../pattern.png'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
+    /* inner outline to emphasize content box */
+    box-shadow: inset 0 0 0 2px #94a3b8; /* slate-400 */
+}
+
+
+.boxDemoPadding {
+    border: 2px dashed rgba(15, 23, 42, 0.5);
+    padding: 8px;
+}
+
+
+.boxDemoContent {
+    background: #ffffff;
+    border: 1px solid #cbd5e1; /* slate-300 */
+    padding: 8px 10px;
+    text-align: center;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}

@@ -1,8 +1,13 @@
 import './App.css'
+import {BundleCss, BundleBem1Css, BundleBem2Css} from "@/components/BundleCss";
 
 function App() {
   return (
-    <>Components</>
+    <>
+        <BundleCss />
+        <BundleBem1Css />
+        <BundleBem2Css />
+    </>
   )
 }
 
