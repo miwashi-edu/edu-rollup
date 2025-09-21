@@ -56,3 +56,11 @@ build: {
     sourcemap: true,
   },
 ```
+
+## CSS
+
+```
+import cssInjectedByJs from 'vite-plugin-css-injected-by-js'
+npm i -D vite-plugin-css-injected-by-js
+plugins: [cssInjectedByJs(), react()],
+```
