@@ -16,6 +16,12 @@ export default defineConfig({
       localsConvention: 'camelCase', // or 'camelCaseOnly'
     },
   },
+  build: {
+    lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
+    rollupOptions: { external: ['react', 'react-dom'] },
+    cssCodeSplit: true, // emits dist/style.css
+    sourcemap: true,
+  },
   test: {
     projects: [{
       extends: true,

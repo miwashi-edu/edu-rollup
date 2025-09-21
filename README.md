@@ -1,12 +1,58 @@
-# React + Vite
+# edu-rollup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+No relink needed.
 
-Currently, two official plugins are available:
+npm link creates a symlink. Rebuilding your lib just updates files behind that link.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app will pick up changes on refresh; occasionally restart its dev server if cache sticks.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Vite expects a built entry. Fix the entry + build the lib.
+
+```bash
+# in components/ (edu-rollup-components)
+npm pkg set type=module
+npm pkg set main=./dist/index.js
+npm pkg set module=./dist/index.js
+npm pkg set exports=./dist/index.js
+npm pkg set "files[]='dist'"
+npm pkg set "peerDependencies.react=^18.0.0 || ^19.0.0"
+npm pkg set "peerDependencies.react-dom=^18.0.0 || ^19.0.0"
+npm pkg set scripts.prepare="vite build"
+```
+
+```bash
+cat > src/index.js <<'EOF'
+export { default as BundleCss } from './components/BundleCss/BundleCss.jsx';
+export { default as BundleBem1Css } from './components/BundleCss/BundleBem1Css.jsx';
+export { default as BundleBem2Css } from './components/BundleCss/BundleBem2Css.jsx';
+EOF
+```
+## NPM get
+
+```bash
+# single field
+npm pkg get name
+npm pkg get version
+npm pkg get scripts.test
+
+# multiple fields
+npm pkg get name version
+
+# nested / arrays
+npm pkg get "contributors[0].email"
+npm pkg get "exports[.].require"
+
+# workspaces
+npm pkg get name version --ws
+
+```
+
+```json
+build: {
+    lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
+    rollupOptions: { external: ['react', 'react-dom'] },
+    cssCodeSplit: true, // emits dist/style.css
+    sourcemap: true,
+  },
+```
