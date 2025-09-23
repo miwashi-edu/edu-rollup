@@ -1,5 +1,5 @@
 import './App.css'
-import {BundleCss, BundleBem1Css, BundleBem2Css} from "edu-rollup-components";
+import {BundleCss, BundleBem1Css, BundleBem2Css, BundleImage} from "edu-rollup-components";
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
         <BundleCss />
         <BundleBem1Css />
         <BundleBem2Css />
+          <BundleImage />
       </>
   )
 }

@@ -54,6 +54,12 @@ build: {
     rollupOptions: { external: ['react', 'react-dom'] },
     cssCodeSplit: true, // emits dist/style.css
     sourcemap: true,
+
+    rollupOptions: {
+      output: {
+    assetFileNames: 'assets/[name]-[hash][extname]',
+    },
+    },
   },
 ```
 
