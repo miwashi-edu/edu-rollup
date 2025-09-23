@@ -1,0 +1,5 @@
+.container { display: grid; gap: 12px; padding: 12px; }
+.note { opacity: 0.7; font-size: 0.9rem; }
+.item { display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 8px; }
+.label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.8; }
+.sample { padding: 8px 10px; border: 1px solid rgba(0,0,0,.1); border-radius: 10px; }
