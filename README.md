@@ -48,7 +48,7 @@ npm pkg get name version --ws
 
 ```
 
-```json
+```js
 {
 build: {
     lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
