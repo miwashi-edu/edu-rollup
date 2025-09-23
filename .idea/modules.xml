@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/edu-rollup.iml" filepath="$PROJECT_DIR$/.idea/edu-rollup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../trailhead/trailhead-app/.idea/trailhead-app.iml" filepath="$PROJECT_DIR$/../trailhead/trailhead-app/.idea/trailhead-app.iml" />
+    </modules>
+  </component>
+</project>
