@@ -19,7 +19,13 @@ export default defineConfig({
   },
   build: {
     lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
-    rollupOptions: { external: ['react', 'react-dom'] },
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+      },
+    },
     cssCodeSplit: true, // emits dist/style.css
     sourcemap: true,
   },
