@@ -49,6 +49,7 @@ npm pkg get name version --ws
 ```
 
 ```json
+{
 build: {
     lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
     rollupOptions: { external: ['react', 'react-dom'] },
@@ -61,6 +62,7 @@ build: {
     },
     },
   },
+}
 ```
 
 ## CSS
