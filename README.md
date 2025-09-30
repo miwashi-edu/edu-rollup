@@ -50,7 +50,7 @@ EOF
 
 ## Configure build step in vite.config.js
 
-```json
+```js
 build: {
     lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
     rollupOptions: { external: ['react', 'react-dom'] },
