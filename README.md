@@ -11,7 +11,7 @@ The app will pick up changes on refresh; occasionally restart its dev server if 
 ```bash
 npm pkg set name="@miwashi/components"
 npm pkg set contributors[0].email = "user@example.com"
-``
+```
 
 
 ## Configure main, module, exports, files for bundler.
