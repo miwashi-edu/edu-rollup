@@ -140,50 +140,25 @@ npm pkg set "peerDependencies.react-dom=^18.0.0 || ^19.0.0"
 
 ## Configure build step in vite.config.js
 
+> Add `build: {},`on right level in your vite.config.js
+
+
 ```js
+plugins: [react()],
 build: {
-    lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
-    rollupOptions: { external: ['react', 'react-dom'] },
-    cssCodeSplit: true, // emits dist/style.css
-    sourcemap: true,
-
-    rollupOptions: {
-      output: {
-    assetFileNames: 'assets/[name]-[hash][extname]',
-    },
-    },
-  },
+    lib: {entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js',},
+    rollupOptions: {external: ['react', 'react-dom'], output: {inlineDynamicImports: true,},},
+    cssCodeSplit: false,
+    minify: 'esbuild',
+    sourcemap: true
+},
+css: {modules: {localsConvention: 'camelCase',},},
+test: {}
 ```
 
-## CSS
+# CSS
 
-### Replace BEM with camelcase
-
-> Note the css: addition
-
-```js
-#vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-  css: { modules: { localsConvention: 'camelCase' } },
-  build: {
-    lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
-    assetsInlineLimit: 0, // emit files instead of inlining
-    sourcemap: true,
-    rollupOptions: {
-      external: ['react', 'react-dom'],
-      output: {
-        assetFileNames: 'assets/[name]-[hash][extname]',
-      },
-    },
-  },
-})
-```
-
-### Embedd css in js
+## Embedd css in js
 
 > Note added plugin in vite.config.js
 
