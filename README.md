@@ -11,7 +11,10 @@ git clone https://github.com/miwashi-edu/edu-rollup.git
 cd edu-rollup
 rm -rf .git # Remove dependency to my git
 git init # Create your own git history
+cd application
+npm install
 cd components
+npm install
 ```
 
 #### Set name of components to user in npmjs + package name
