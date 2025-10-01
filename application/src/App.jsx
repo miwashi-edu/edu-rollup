@@ -1,10 +1,14 @@
 import './App.css'
-
+import {BundleCss, BundleBem1Css, BundleBem2Css, BundleImage, BundleFont} from "./test-util/mock";
 function App() {
 
   return (
     <>
-        Application
+        <BundleCss />
+        <BundleBem1Css />
+        <BundleBem2Css />
+        <BundleImage />
+        <BundleFont />
     </>
   )
 }
