@@ -6,7 +6,7 @@ npm link creates a symlink. Rebuilding your lib just updates files behind that l
 
 The app will pick up changes on refresh; occasionally restart its dev server if cache sticks.
 
-## Prepare
+#### Prepare
 
 ```bash
 cd ~
@@ -18,19 +18,19 @@ git init # Create your own git history
 cd components
 ```
 
-## Set name of components to user in npmjs + package name
+#### Set name of components to user in npmjs + package name
 
 ```bash
 npm pkg set name="@miwashi/components"
 ```
 
-## Set ES6 source dependency to barrel file in src
+#### Set ES6 source dependency to barrel file in src
 
 ```bash
 npm pkg set main=./src/index.js # Add source dependency (we will later change to build dependency)
 ```
 
-## Link the projects
+#### Link the projects
 
 ```bash
 npm link # In components
@@ -39,7 +39,7 @@ cd application
 npm link @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
 ```
 
-## See to it that barrel file in ./src exposes components that are included
+#### See to it that barrel file in ./src exposes components that are included
 
 ```bash
 cd ~
@@ -55,7 +55,7 @@ export { default as BundleImage } from './components/BundleImage/BundleImage.jsx
 EOF
 ```
 
-## Replace mock with your components
+#### Replace mock with your components
 
 > in applciation/src/App.jsx 
 > Replace **REPLACE WITH YOUR NAME OF LIBRARY**
@@ -68,7 +68,7 @@ import { ... } from "./test-util/mock";
 import { ... } from "@miwashi/components"; //REPLACE WITH YOUR NAME OF LIBRARY
 ```
 
-## Commit first successful part (if you removed .git in beginning)
+#### Commit first successful part (if you removed .git in beginning)
 
 ```bash
 cd ~
@@ -104,7 +104,7 @@ git commit -m "Fixed BEM support for CSS.
 
 # Change to build dependency
 
-## Build component
+#### Build component
 
 ```bash
 cd ~
@@ -115,7 +115,7 @@ npm run build
 ls ./dist # check the build
 ```
 
-## Configure main, module, exports, files for bundler.
+#### Configure main, module, exports, files for bundler.
 
 ```bash
 npm pkg set type=module
@@ -127,7 +127,7 @@ npm run build
 ls ./dist # check the build
 ```
 
-## Fix dependencies
+#### Fix dependencies
 
 ```bash
 npm uninstall react
@@ -138,7 +138,7 @@ npm pkg set "peerDependencies.react=^18.0.0 || ^19.0.0"
 npm pkg set "peerDependencies.react-dom=^18.0.0 || ^19.0.0"
 ```
 
-## Configure build step in vite.config.js
+#### Configure build step in vite.config.js
 
 > Add `build: {},`on right level in your vite.config.js
 
@@ -158,7 +158,7 @@ test: {}
 
 # CSS
 
-## Embedd css in js
+#### Embedd css in js
 
 ```
 cd ~
@@ -184,6 +184,8 @@ export default defineConfig({
 
 # Publish
 
+#### First Publish
+
 ```bash
 cd ~
 cd ws
@@ -196,4 +198,52 @@ cd ..
 cd application
 npm install @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
 npm run dev
+```
+
+#### Patch release
+
+> Small fixes that don’t add new features and don’t break anything.  
+> Example: fixing a bug, correcting a typo, or improving performance without changing the API.  
+> → Safe upgrade, no code changes needed by consumers.  
+
+```
+cd ~
+cd ws
+cd edu-rollup
+cd components
+npm version patch
+npm login
+npm publish --access public
+```
+
+#### Minor release
+
+> Adds new features in a backwards-compatible way. Existing code still works, but new capabilities are available.  
+> Example: adding a new component, option, or helper function while keeping old ones intact.  
+> → Usually safe upgrade, but consumers may choose to adopt new features.  
+
+```
+cd ~
+cd ws
+cd edu-rollup
+cd components
+npm version minor
+npm login
+npm publish --access public
+```
+
+#### Major release
+
+> ntroduces changes that break backwards compatibility. Old code may stop working unless updated.  
+> Example: renaming/removing exports, changing function signatures, or dropping support for older React versions.  
+> → Consumers need to adjust their code to upgrade.  
+
+```
+cd ~
+cd ws
+cd edu-rollup
+cd components
+npm version major
+npm login
+npm publish --access public
 ```
