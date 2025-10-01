@@ -1,11 +1,5 @@
 # edu-rollup
 
-No relink needed.
-
-npm link creates a symlink. Rebuilding your lib just updates files behind that link.
-
-The app will pick up changes on refresh; occasionally restart its dev server if cache sticks.
-
 #### Prepare
 
 ```bash
@@ -31,6 +25,8 @@ npm pkg set main=./src/index.js # Add source dependency (we will later change to
 ```
 
 #### Link the projects
+
+> npm link creates a symlink. Rebuilding your lib just updates files behind that link.
 
 ```bash
 npm link # In components
