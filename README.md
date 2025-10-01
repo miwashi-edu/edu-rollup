@@ -15,7 +15,6 @@ git clone https://github.com/miwashi-edu/edu-rollup.git
 cd edu-rollup
 rm -rf .git # Remove dependency to my git
 git init # Create your own git history
-curl -fsSL https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore -o .gitignore
 cd components
 ```
 
