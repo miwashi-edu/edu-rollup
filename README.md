@@ -31,10 +31,22 @@ npm pkg set main=./src/index.js # Add source dependency (we will later change to
 ## Link the projects
 
 ```bash
-npm link
+npm link # In components
 cd ..
 cd application
 npm link @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
+```
+
+## See to it that barrel file in ./src exposes components that are included
+
+```bash
+cat > src/index.js <<'EOF'
+export { default as BundleCss } from './components/BundleCss/BundleCss.jsx';
+export { default as BundleBem1Css } from './components/BundleCss/BundleBem1Css.jsx';
+export { default as BundleBem2Css } from './components/BundleCss/BundleBem2Css.jsx';
+export { default as BundleFont } from './components/BundleFont/BundleFont.jsx';
+export { default as BundleImage } from './components/BundleImage/BundleImage.jsx';
+EOF
 ```
 
 ## Replace mock with your components
@@ -84,19 +96,6 @@ npm install -D react
 npm install -D react-dom
 npm pkg set "peerDependencies.react=^18.0.0 || ^19.0.0"
 npm pkg set "peerDependencies.react-dom=^18.0.0 || ^19.0.0"
-```
-
-
-## See to it that barrel file in ./src exposes components that are included
-
-```bash
-cat > src/index.js <<'EOF'
-export { default as BundleCss } from './components/BundleCss/BundleCss.jsx';
-export { default as BundleBem1Css } from './components/BundleCss/BundleBem1Css.jsx';
-export { default as BundleBem2Css } from './components/BundleCss/BundleBem2Css.jsx';
-export { default as BundleFont } from './components/BundleFont/BundleFont.jsx';
-export { default as BundleImage } from './components/BundleImage/BundleImage.jsx';
-EOF
 ```
 
 ## Configure build step in vite.config.js
