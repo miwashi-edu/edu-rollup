@@ -90,6 +90,8 @@ cat > src/index.js <<'EOF'
 export { default as BundleCss } from './components/BundleCss/BundleCss.jsx';
 export { default as BundleBem1Css } from './components/BundleCss/BundleBem1Css.jsx';
 export { default as BundleBem2Css } from './components/BundleCss/BundleBem2Css.jsx';
+export { default as BundleFont } from './components/BundleFont/BundleFont.jsx';
+export { default as BundleImage } from './components/BundleImage/BundleImage.jsx';
 EOF
 ```
 ## NPM get
