@@ -13,6 +13,8 @@ cd ~
 cd ws
 git clone https://github.com/miwashi-edu/edu-rollup.git
 cd edu-rollup
+rm -rf .git # Remove dependency to my git
+git init # Create your own git history
 cd components
 ```
 
@@ -64,6 +66,16 @@ import { ... } from "./test-util/mock";
 > with
 ```jsx
 import { ... } from "@miwashi/components"; //REPLACE WITH YOUR NAME OF LIBRARY
+```
+
+## Commit first successful part (if you removed .git in beginning)
+
+```bash
+cd ~
+cd ws
+cd edu-rollup
+git add .
+git commit -m "Components working with source code dependency"
 ```
 
 # Change to build dependency
