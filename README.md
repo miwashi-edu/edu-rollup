@@ -78,6 +78,30 @@ git add .
 git commit -m "Components working with source code dependency"
 ```
 
+# Fix BEM support
+
+> Add `css: {modules: {localsConvention: 'camelCase',},},`on right level in your vite.config.js
+
+```bash
+cd ws
+cd edu-rollup
+cd components
+vi vite.config.js
+```
+
+```js
+export default defineConfig({
+  plugins: [react()],
+  css: {modules: {localsConvention: 'camelCase',},},
+  test: {}
+});
+```
+
+```bash
+git add .
+git commit -m "Fixed BEM support for CSS.
+``
+
 # Change to build dependency
 
 ## Build component
