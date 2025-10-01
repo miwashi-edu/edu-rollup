@@ -6,9 +6,19 @@ npm link creates a symlink. Rebuilding your lib just updates files behind that l
 
 The app will pick up changes on refresh; occasionally restart its dev server if cache sticks.
 
-## Set name to user in npmjs + package name
+## Prepare
 
 ```bash
+cd ~
+cd ws
+git clone https://github.com/miwashi-edu/edu-rollup.git
+cd edu-rollup
+```
+
+## Set name of components to user in npmjs + package name
+
+```bash
+cd components
 npm pkg set name="@miwashi/components"
 npm pkg set contributors[0].email = "user@example.com"
 ```
@@ -16,10 +26,6 @@ npm pkg set contributors[0].email = "user@example.com"
 ## Link the projects
 
 ```bash
-cd ~
-cd ws
-cd edu-rollup
-cd components
 npm link
 cd ..
 cd application
