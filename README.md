@@ -21,6 +21,7 @@ cd edu-rollup
 cd components
 npm pkg set name="@miwashi/components"
 npm pkg set contributors[0].email = "user@example.com"
+npm pkg set main=./src/index.js # Add source dependency (we will later change to build dependency)
 ```
 
 ## Link the projects
@@ -38,11 +39,24 @@ npm link @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
 > Replace **REPLACE WITH YOUR NAME OF LIBRARY**
 
 ```jsx
-import {BundleCss, BundleBem1Css, BundleBem2Css, BundleImage, BundleFont} from "./test-util/mock";
+import { ... } from "./test-util/mock";
 ```
 > with
 ```jsx
-import {BundleCss, BundleBem1Css, BundleBem2Css, BundleImage, BundleFont} from "@miwashi/components";
+import { ... } from "@miwashi/components";
+```
+
+# Change to build dependency
+
+## Build component
+
+```bash
+cd ~
+cd ws
+cd edu-rollup
+cd components
+npm run build
+ls ./dist # check the build
 ```
 
 ## Configure main, module, exports, files for bundler.
@@ -53,6 +67,8 @@ npm pkg set main=./dist/index.js
 npm pkg set module=./dist/index.js
 npm pkg set exports=./dist/index.js
 npm pkg set "files[]='dist'"
+npm run build
+ls ./dist # check the build
 ```
 
 ## Fix dependencies
