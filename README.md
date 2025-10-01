@@ -13,6 +13,31 @@ npm pkg set name="@miwashi/components"
 npm pkg set contributors[0].email = "user@example.com"
 ```
 
+## Link the projects
+
+```bash
+cd ~
+cd ws
+cd edu-rollup
+cd components
+npm link
+cd ..
+cd application
+npm link @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
+```
+
+## Replace mock with your components
+
+> in applciation/src/App.jsx 
+> Replace **REPLACE WITH YOUR NAME OF LIBRARY**
+
+```jsx
+import {BundleCss, BundleBem1Css, BundleBem2Css, BundleImage, BundleFont} from "./test-util/mock";
+```
+> with
+```jsx
+import {BundleCss, BundleBem1Css, BundleBem2Css, BundleImage, BundleFont} from "@miwashi/components";
+```
 
 ## Configure main, module, exports, files for bundler.
 
