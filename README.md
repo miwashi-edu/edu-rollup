@@ -13,14 +13,18 @@ cd ~
 cd ws
 git clone https://github.com/miwashi-edu/edu-rollup.git
 cd edu-rollup
+cd components
 ```
 
 ## Set name of components to user in npmjs + package name
 
 ```bash
-cd components
 npm pkg set name="@miwashi/components"
-npm pkg set contributors[0].email = "user@example.com"
+```
+
+## Set ES6 source dependency to barrel file in src
+
+```bash
 npm pkg set main=./src/index.js # Add source dependency (we will later change to build dependency)
 ```
 
