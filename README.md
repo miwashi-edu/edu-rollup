@@ -212,6 +212,7 @@ cd ~
 cd ws
 cd edu-rollup
 cd components
+npm run build # As we have a build dependency, we need to build to publish
 npm version patch
 npm login
 npm publish --access public
@@ -228,6 +229,7 @@ cd ~
 cd ws
 cd edu-rollup
 cd components
+npm run build # As we have a build dependency, we need to build to publish
 npm version minor
 npm login
 npm publish --access public
@@ -235,7 +237,7 @@ npm publish --access public
 
 #### Major release
 
-> ntroduces changes that break backwards compatibility. Old code may stop working unless updated.  
+> Introduces changes that break backwards compatibility. Old code may stop working unless updated.  
 > Example: renaming/removing exports, changing function signatures, or dropping support for older React versions.  
 > → Consumers need to adjust their code to upgrade.  
 
@@ -244,6 +246,7 @@ cd ~
 cd ws
 cd edu-rollup
 cd components
+npm run build # As we have a build dependency, we need to build to publish
 npm version major
 npm login
 npm publish --access public
