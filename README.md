@@ -96,7 +96,7 @@ export default defineConfig({
 ```bash
 git add .
 git commit -m "Fixed BEM support for CSS.
-``
+```
 
 # Change to build dependency
 
