@@ -160,12 +160,12 @@ test: {}
 
 ## Embedd css in js
 
-> Note added plugin in vite.config.js
-
 ```
-import cssInjectedByJs from 'vite-plugin-css-injected-by-js'
+cd ~
+cd ws
+cd edu-rollup
+cd components
 npm i -D vite-plugin-css-injected-by-js
-plugins: [cssInjectedByJs(), react()],
 ```
 
 ```js
@@ -176,12 +176,24 @@ import cssInjectedByJs from 'vite-plugin-css-injected-by-js'
 
 export default defineConfig({
   plugins: [cssInjectedByJs(), react()],
-  css: { modules: { localsConvention: 'camelCase' } },
-  build: {
-    lib: { entry: 'src/index.js', formats: ['es'], fileName: () => 'index.js' },
-    rollupOptions: { external: ['react', 'react-dom'] },
-    cssCodeSplit: true, // ok; plugin injects CSS into JS chunks
-    sourcemap: true,
-  },
+  css: {},
+  build: {},
+  test: {},
 })
+```
+
+# Publish
+
+```bash
+cd ~
+cd ws
+cd edu-rollup
+cd components
+npm login
+npm publish --access public
+npm unlink @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
+cd ..
+cd application
+npm install @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
+npm run dev
 ```
