@@ -63,7 +63,7 @@ import { ... } from "./test-util/mock";
 ```
 > with
 ```jsx
-import { ... } from "@miwashi/components";
+import { ... } from "@miwashi/components"; //REPLACE WITH YOUR NAME OF LIBRARY
 ```
 
 # Change to build dependency
