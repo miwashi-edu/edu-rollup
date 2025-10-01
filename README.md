@@ -94,8 +94,6 @@ export { default as BundleFont } from './components/BundleFont/BundleFont.jsx';
 export { default as BundleImage } from './components/BundleImage/BundleImage.jsx';
 EOF
 ```
-## NPM get
-
 
 ## Configure build step in vite.config.js
 
