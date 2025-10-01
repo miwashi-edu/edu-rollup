@@ -40,6 +40,10 @@ npm link @miwashi/components #REPLACE WITH YOUR NAME OF LIBRARY
 ## See to it that barrel file in ./src exposes components that are included
 
 ```bash
+cd ~
+cd ws
+cd edu-rollup
+cd components
 cat > src/index.js <<'EOF'
 export { default as BundleCss } from './components/BundleCss/BundleCss.jsx';
 export { default as BundleBem1Css } from './components/BundleCss/BundleBem1Css.jsx';
