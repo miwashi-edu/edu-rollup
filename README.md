@@ -120,7 +120,7 @@ npm pkg set type=module
 npm pkg set main=./dist/index.js
 npm pkg set module=./dist/index.js
 npm pkg set exports=./dist/index.js
-npm pkg set "files[]='dist'"
+npm pkg set 'files[0]'=dist
 npm run build
 ls ./dist # check the build
 ```
